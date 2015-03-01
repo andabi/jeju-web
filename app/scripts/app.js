@@ -29,6 +29,14 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/write', {
+        templateUrl: 'views/write.html',
+        controller: 'WriteCtrl'
+      })
+      .when('/show', {
+        templateUrl: 'views/show.html',
+        controller: 'ShowCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
