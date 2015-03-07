@@ -1,7 +1,36 @@
-<p>This is the write view.{{awesomeThings}}</p>
- <a ng-href="#/show">show page </a>
-<form>
-  <input ng-model="writer"></input>
-  <textarea ng-model="content"></textarea>
-  <button>Send</button>
-</form>
+
+<div class="row">
+  <div class="col-xs-offset-1 col-xs-10">
+    Congratulations!!!
+    <a ng-href="#/show" class=" pull-right">see all message</a>
+    <p/>
+  </div>
+</div>
+
+  <form class="form-horizontal">
+    <div class="row">
+      <div class="form-group">
+        <div class="col-xs-offset-1 col-xs-10">
+          <textarea ng-model="content" class="form-control" rows="4" id="content" placeholder="Leave the message"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="Name" class="col-xs-offset-2 col-xs-2 col-sm-offset-1 col-sm-2 col-md-offset-1 col-md-2 text-center">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <div>From</div>
+        </label>
+        <span class="col-xs-6 col-sm-6 col-md-6">
+          <input ng-model="writer" type="text" class="form-control" id="Name" placeholder="Name">
+        </span>
+        <!--
+      </div>
+      <div class="form-group">-->
+        <span class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-2 col-md-2">
+          <button type="submit" style="width:100%" class="btn btn-primary" ng-click="send()">Send</button>
+        </span>
+      </div>
+    </div>
+  </form>

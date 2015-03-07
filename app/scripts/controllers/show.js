@@ -11,7 +11,8 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('ShowCtrl', function ($scope, $log, Messages) {
+  .controller('ShowCtrl', function ($rootScope, $scope, $log, Messages) {
+    $rootScope.nav = 'show';
     $scope.data = Messages.getAllMsgFromID();
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

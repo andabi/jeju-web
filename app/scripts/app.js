@@ -22,12 +22,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/write.html',
+        controller: 'WriteCtrl'
       })
       .when('/write', {
         templateUrl: 'views/write.html',
@@ -40,4 +36,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .run(function ($rootScope) {
+    $rootScope.nav = 'write'
   });

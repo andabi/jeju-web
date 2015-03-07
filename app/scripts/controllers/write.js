@@ -11,11 +11,12 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('WriteCtrl', function ($scope, $log, Messages) {
-    Messages.sendMsg($scope.writer, $scope.content);
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('WriteCtrl', function ($rootScope, $scope, $log, Messages) {
+    $rootScope.nav = 'write';
+
+    $scope.send = function () {
+      Messages.sendMsg($scope.writer, $scope.content);
+      $log.debug("Writer: " + $scope.writer);
+      $log.debug("Content: " + $scope.content);
+    }
   });

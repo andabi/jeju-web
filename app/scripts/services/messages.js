@@ -15,7 +15,10 @@ angular.module('webApp')
       var data = msgResource.query({startId:startId, limit:10},
         success, fail);
       data = [{writer:'AAA', content:'Congratulations!', date:'150301'},
-        {writer:'BBB', content:'Wow Congratulations!', date:'150302'}];
+        {writer:'BBB', content:'Wow Congratulations!', date:'150302'},
+        {writer:'AAA', content:'Congratulations!', date:'150301'},
+        {writer:'BBB', content:'Wow Congratulations!', date:'150302'}
+      ];
       return data;
     };
 
