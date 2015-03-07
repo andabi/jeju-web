@@ -1,8 +1,11 @@
-<p>This is the show view.</p>
+<div id="show">
 
-<div style="margin: 3px; float:left; width:200px; background-color: #00FFFF" ng-repeat="elem in data" >
-  <div> {{elem.writer}}</div>
-  <div> {{elem.content}}</div>
-  <div>{{elem.date}}</div>
-  <p/>
+  <div style="margin:0 auto; text-align:center">
+    <div style="display:inline-block; margin:6px; width:200px; height:130px; background-color: #00FFFF" ng-repeat="elem in data">
+      <div> {{elem.writer}}</div>
+      <div> {{elem.content}}</div>
+      <div>{{elem.date}}</div>
+      <p/>
+    </div>
+  </div>
 </div>

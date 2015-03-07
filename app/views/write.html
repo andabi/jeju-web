@@ -1,17 +1,18 @@
 
 <div class="row">
-  <div class="col-xs-offset-1 col-xs-10">
-    Congratulations!!!
-    <a ng-href="#/show" class=" pull-right">see all message</a>
-    <p/>
+  <div id="greeting" class="col-xs-offset-1 col-xs-10 text-center">
+    <h1><strong> Congratulations  On Your Wedding! </strong></h1>
+    <a ng-href="#/show" class="navbar-link pull-right" id="msglink">
+      SEE ALL MSG
+    </a>
   </div>
 </div>
-
+<p/>
   <form class="form-horizontal">
     <div class="row">
       <div class="form-group">
         <div class="col-xs-offset-1 col-xs-10">
-          <textarea ng-model="content" class="form-control" rows="4" id="content" placeholder="Leave the message"></textarea>
+          <textarea ng-model="content" class="form-control" rows="5" id="content" placeholder="Leave your congratulations message"></textarea>
         </div>
       </div>
     </div>
@@ -29,7 +30,7 @@
       </div>
       <div class="form-group">-->
         <span class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-2 col-md-2">
-          <button type="submit" style="width:100%" class="btn btn-primary" ng-click="send()">Send</button>
+          <button type="submit" style="width:100%" class="btn btn-primary" ng-click="send()">SEND</button>
         </span>
       </div>
     </div>
