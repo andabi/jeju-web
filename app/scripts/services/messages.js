@@ -17,7 +17,9 @@ angular.module('webApp')
       data = [{writer:'AAA', content:'Congratulations!', date:'150301'},
         {writer:'BBB', content:'Wow Congratulations!', date:'150302'},
         {writer:'AAA', content:'Congratulations!', date:'150301'},
-        {writer:'BBB', content:'Wow Congratulations!', date:'150302'}
+        {writer:'BBB', content:'Wow Congratulations!', date:'150302'},
+        {writer:'BBB', content:'Wow Congratulations!', date:'150302'},
+        {writer:'AAA', content:'Congratulations!', date:'150301'}
       ];
       return data;
     };
