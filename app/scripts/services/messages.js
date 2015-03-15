@@ -1,8 +1,30 @@
 angular.module('webApp')
   .factory('Messages', function ($resource) {
     var ret = {};
-    var msgResource = $resource('/message/:id'
+    var msgResource = $resource('http://asia.bigeye.me:\\9000/message/', {}, {
+        'save': {method: 'POST', headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}},
+        'query': {method:'GET', headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}, isArray:true}
+      }
     );
+    var lasttime = undefined;
+
+    ret.getNewMsg = function (success, fail) {
+      //var data = [{writer:'AAA', content:'Congratulations!', date:Date()}];
+
+      if (lasttime === undefined) {
+        data = msgResource.query({}, success, fail);
+        if (data !== []) {
+          var d = new Date();
+          lasttime = d.toISOString();
+        }
+        console.log(data);
+        //2015-03-14T23:23:29%2B09:00
+      }
+      else
+        data = msgResource.query({after:lasttime}, success, fail);
+
+      return data;
+    };
 
     ret.getMsgFromID = function (id, success, fail) {
       var msgList = msgResource.get({id:id},
@@ -25,10 +47,11 @@ angular.module('webApp')
     };
 
     ret.sendMsg = function(writer, content, success, fail) {
-      msgResource.save({writer:writer, content:content},
+      msgResource.save({}, {writer:writer, content:content},
                        success, fail
       );
     };
+
 
     return ret;
   }

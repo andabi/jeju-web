@@ -10,18 +10,31 @@
   padding: 0.2em 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   padding: 0;
-  margin:30px;
+/*  margin:30px;*/
   font-family: 'Poiret One';
   font-weight: bold;
   background-image: url(../images/bg.jpg);
   background-repeat: repeat-x;
-  background-position: bottom center;
+  background-position: center bottom;
+  background-attachment: scroll;
   background-color: #40bed4;
+  height: 100%;
 }
 
-.elem {
+#couple {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  max-width: 622px;
+}
+
+.repeat-elem {
   display:inline-block;
   margin:7px;
   width:210px;
@@ -31,15 +44,33 @@ body {
   background-size: 100% 100%;
 }
 
-#show div .elem:nth-child(1) {
+.repeat-elem.ng-enter,
+.repeat-elem.ng-leave {
+  -webkit-transition:1s linear all;
+  transition:1s linear all;
+}
+
+.repeat-elem.ng-enter,
+.repeat-elem.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.repeat-elem.ng-leave,
+.repeat-elem.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+#show div .repeat-elem:nth-child(1) {
   width:200px;
   height:200px;
   background-repeat: no-repeat;
-  background-image: url(../images/bluecloud.gif);
+  /*background-image: url(../images/bluecloud.gif);*/
 /*  background: #FFDEE7;*/
 }
+#show div .repeat-elem:nth-child(1) .elem-content {
+  font-size: 25px;
+}
 
-#show div .elem:nth-child(1) {
+#show div .repeat-elem:nth-child(2) {
   width:200px;
   height:100px;
   background-repeat: no-repeat;

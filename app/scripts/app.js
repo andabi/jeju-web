@@ -19,7 +19,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/write.html',
@@ -36,6 +36,13 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+    $httpProvider.defaults.useXDomain = true;
+    $httpProvider.defaults.headers.common = {};
+    $httpProvider.defaults.headers.post = {};
+    $httpProvider.defaults.headers.post = {'Content-Type': 'application/x-www-form-urlencoded'};
+    $httpProvider.defaults.headers.get = {'Content-Type': 'application/x-www-form-urlencoded'};
+    $httpProvider.defaults.headers.common = {'Content-Type': 'text/html'};
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
   })
   .run(function ($rootScope) {
     $rootScope.nav = 'write'

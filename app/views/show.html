@@ -1,14 +1,15 @@
 <div id="show">
 
   <div style="margin:0 auto; text-align:center; ">
-    <div class="elem" style="/*background-image:url(../images/yellow.png); background-size: 200px 200px;*/" ng-repeat="elem in data">
+    <div class="repeat-elem" ng-repeat="elem in data">
       <div> {{elem.writer}}</div>
-      <div> {{elem.content}}</div>
+      <div class="elem-content"> {{elem.content}}</div>
       <div>{{elem.date}}</div>
       <p/>
     </div>
   </div>
-  <img src="../images/couple.png" style="margin-top: -60px">
+
+  <img src="../images/couple.png" id="couple">
 </div>
 
 
