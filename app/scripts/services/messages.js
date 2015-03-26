@@ -12,16 +12,19 @@ angular.module('webApp')
       //var data = [{writer:'AAA', content:'Congratulations!', date:Date()}];
 
       if (lasttime === undefined) {
-        data = msgResource.query({}, success, fail);
-        if (data !== []) {
-          var d = new Date();
-          lasttime = d.toISOString();
-        }
-        console.log(data);
+        msgResource.query({}, function (data) {
+          if (data !== []) {
+            var d = new Date();
+            lasttime = d.toISOString();
+          }
+          console.log(data);
+        });
         //2015-03-14T23:23:29%2B09:00
       }
       else
-        data = msgResource.query({after:lasttime}, success, fail);
+        msgResource.query({after:lasttime}, function (data) {
+
+        };
 
       return data;
     };
