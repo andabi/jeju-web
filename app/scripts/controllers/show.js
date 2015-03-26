@@ -14,12 +14,13 @@ angular.module('webApp')
 .controller('ShowCtrl', function ($rootScope, $scope, $interval, $log, Messages) {
   $rootScope.nav = 'show';
   $scope.data = [];
+  var lastTime;
   $interval(function() {
-    var lastTime = new Date().toISOString();
     var newMsgPromise = Messages.getNewMsgPromise(lastTime);
     newMsgPromise.then(function(data) {
       if (data.length > 0) {
-        $scope.data = $scope.data.concat(data)
+        $scope.data = $scope.data.concat(data);
+        lastTime = data.created_at;
       }
     }, function (data) {
       //error
