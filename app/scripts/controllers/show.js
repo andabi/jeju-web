@@ -11,18 +11,25 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('ShowCtrl', function ($rootScope, $scope, $interval, $log, Messages) {
-    $rootScope.nav = 'show';
-    $scope.data = [];
-    $interval(function() {
-      var newdata = Messages.getNewMsg();
-      $scope.data = Messages.getNewMsg().concat($scope.data);
-      console.log($scope.data);
-    }, 5000);
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  }
+.controller('ShowCtrl', function ($rootScope, $scope, $interval, $log, Messages) {
+        $rootScope.nav = 'show';
+        $scope.data = [];
+        $interval(function() {
+            Messeges.getNewMsg(function(response) {
+                $scope.newdata=response;
+            });
+            var newdata = $scope.newdata; //Messages.getNewMsg();
+            console.log("-------newdata");
+            console.log(newdata.length);
+            console.log("-------");
+            newdata = newdata.concat($scope.data);
+            console.log("-->"+newdata.length);
+            $scope.data = newdata;
+            }, 5000);
+        $scope.awesomeThings = [
+        'HTML5 Boilerplate',
+        'AngularJS',
+        'Karma'
+        ];
+        }
 );
