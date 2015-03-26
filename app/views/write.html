@@ -3,7 +3,7 @@
   <div id="greeting" class="col-xs-offset-1 col-xs-10 text-center">
     <h1><strong> Congratulations  On Your Wedding! </strong></h1>
     <a ng-href="#/show" class="navbar-link pull-right" id="msglink">
-      SEE ALL MSG
+      모든 메시지 보기
     </a>
   </div>
 </div>
@@ -13,7 +13,7 @@
       <div class="form-group" ng-form="contentForm">
         <div class="col-xs-offset-1 col-xs-10">
             <p> {{100 - contentForm.contentItem.$viewValue.length }} / 100 </p>
-            <textarea ng-model="content" class="form-control" rows="5" id="content" ng-maxlength="100" maxlength="100" name="contentItem" placeholder="Leave your congratulations message"></textarea>
+            <textarea ng-model="content" class="form-control" rows="5" id="content" ng-maxlength="100" maxlength="100" name="contentItem" placeholder="축하 메시지를 남겨주세요."></textarea>
         </div>
       </div>
     </div>
@@ -25,13 +25,13 @@
           <div>From</div>
         </label>
         <span class="col-xs-6 col-sm-6 col-md-6">
-          <input ng-model="writer" type="text" class="form-control" id="Name" placeholder="Name">
+          <input ng-model="writer" type="text" class="form-control" id="Name" maxlength="16" placeholder="보낸이">
         </span>
         <!--
       </div>
       <div class="form-group">-->
         <span class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-2 col-md-2">
-          <button type="submit" style="width:100%" class="btn btn-primary" ng-click="send()">SEND</button>
+          <button type="submit" style="width:100%" class="btn btn-primary" ng-click="send()">보내기</button>
         </span>
       </div>
     </div>

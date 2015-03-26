@@ -17,7 +17,7 @@ angular.module('webApp')
         }, function (data) {
           //error
         });
-      }, 5000);
+      }, 3000);
     }
 
     $scope.awesomeThings = [

@@ -14,9 +14,8 @@ angular.module('webApp')
     };
 
     ret.sendMsg = function(writer, content, success, fail) {
-        msgResource.save({writer:writer, content:content}, {},
-                success, fail
-                );
+      msgResource.save({writer:writer, content:content}, {},
+        success, fail);
     };
 
     return ret;
