@@ -31,7 +31,8 @@ angular.module('webApp')
     //};
 
     ret.getNewMsgPromise = function(lastTime) {
-      return msgResource.query({after:lastTime}).$promise
+      var param = (lastTime) ? {after:lastTime} : {};
+      return msgResource.query(param).$promise
     };
 
     //ret.getMsgFromID = function (id, success, fail) {
