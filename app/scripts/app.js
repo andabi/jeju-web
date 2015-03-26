@@ -45,5 +45,6 @@ angular
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
   })
   .run(function ($rootScope) {
-    $rootScope.nav = 'write'
+    $rootScope.nav = 'write';
+    $rootScope.isIntervalStarted = false;
   });
