@@ -7,14 +7,14 @@ angular.module('webApp')
 
     if($rootScope.isIntervalStarted === false) {
       $rootScope.data = [];
-      $scope.msgs = [];
+      $rootScope.msgs = [];
       $rootScope.isIntervalStarted = true;
       $interval(function() {
         var newMsgPromise = Messages.getNewMsgPromise(Messages.lastTime);
         newMsgPromise.then(function(data) {
           if (data.length > 0) {
             Messages.lastTime = data[0].created_at;
-            $scope.msgs = data.concat([$scope.noticeMsg]).concat($rootScope.data);
+            $rootScope.msgs = data.concat([$scope.noticeMsg]).concat($rootScope.data);
             $rootScope.data = data.concat($rootScope.data);
           }
         }, function (data) {
