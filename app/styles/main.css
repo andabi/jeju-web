@@ -22,26 +22,30 @@ body {
   background-image: url(../images/bg.jpg);
   background-repeat: repeat-x;
   background-position: center bottom;
-  background-attachment: scroll;
+  background-attachment:fixed;
   background-color: #40bed4;
   height: 100%;
 }
 
 #couple {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   width: 100%;
   max-width: 622px;
+  opacity : 0.9;
+  z-index: -1;
+  display: block;
 }
 
 .repeat-elem {
   display:inline-block;
-  margin:7px;
+  margin:15px;
   width:210px;
-  height:170px;
+  /*height:150px;*/
   background-repeat: no-repeat;
   background-image: url(../images/onecloud.png);
   background-size: 100% 100%;
+  vertical-align: middle;
 }
 
 .repeat-elem.ng-enter,
@@ -60,19 +64,20 @@ body {
 }
 
 #show div .repeat-elem:nth-child(1) {
-  width:200px;
-  height:200px;
+  width:210px;
+  /*height:130px;*/
   background-repeat: no-repeat;
   /*background-image: url(../images/bluecloud.gif);*/
 /*  background: #FFDEE7;*/
 }
 #show div .repeat-elem:nth-child(1) .elem-content {
-  font-size: 30px !important;
+  font-size: 25px !important;
 }
 
 #show div .repeat-elem:nth-child(2) {
   width:200px;
-  height:100px;
+  /*height:90px;*/
+  color:darkblue;
   background-repeat: no-repeat;
   background-image: url(../images/onecloud.png);
   /*  background: #FFDEE7;*/
@@ -133,6 +138,8 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
+  position: fixed;
+  bottom: 0;
   /*border-top: 1px solid #e5e5e5;*/
 }
 
@@ -165,7 +172,7 @@ body>.container{
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 760px;
   }
 
   /* Remove the padding we set earlier */
