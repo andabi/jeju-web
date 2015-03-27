@@ -1,10 +1,10 @@
 <div id="show">
 
   <div style="margin:0 auto; text-align:center; ">
-    <div class="repeat-elem" ng-repeat="elem in data">
-      <div> {{elem.writer}}</div>
-      <div class="elem-content"> {{elem.content}}</div>
-      <div>{{elem.date}}</div>
+    <div class="repeat-elem" ng-repeat="elem in msgs">
+      <div style="font-size: 20px; font-family: 'Hanna', serif; font-weight: normal;" class="elem-content"> {{elem.content}}</div>
+      <div style="color: aliceblue; font-family: 'Nanum Gothic', serif; font-weight: normal;"> {{elem.writer}}</div>
+      <!--<div>{{elem.created_at}}</div>-->
       <p/>
     </div>
   </div>
